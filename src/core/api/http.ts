@@ -5,10 +5,7 @@ export const queryClient = new QueryClient();
 
 const OPENFDA_API_URL = "https://api.fda.gov/drug/label.json";
 
-export const getDrugs = async (
-  query: string,
-  page: number
-): Promise<{ meta: any; results: Drug[] }> => {
+export const getDrugs = async (query: string, page: number) => {
   const response = await fetch(
     `${OPENFDA_API_URL}?search=openfda.brand_name:${query}&limit=10&skip=${
       (page - 1) * 10
@@ -23,7 +20,7 @@ export const getDrugs = async (
   return { ...data, results: filteredResults };
 };
 
-export const getDrugById = async (id: string): Promise<Drug> => {
+export const getDrugById = async (id: string) => {
   const response = await fetch(
     `https://api.fda.gov/drug/label.json?search=id:${id}`
   );
