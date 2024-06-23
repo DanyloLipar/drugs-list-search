@@ -32,7 +32,7 @@ const DrugDetails = () => {
         <Card>
           <CardContent>
             <Typography variant="h4">
-              {drug?.openfda.brand_name.join(", ")}
+              {drug?.openfda?.brand_name?.join(", ")}
             </Typography>
             <Typography variant="h6">
               Generic Name: {drug?.openfda?.generic_name?.join(", ")}
@@ -113,7 +113,7 @@ const DrugDetails = () => {
             {drug?.how_supplied && (
               <Box sx={{ marginTop: "8px" }}>
                 <Typography variant="h6">How Supplied</Typography>
-                <Typography variant="body1">{drug.how_supplied}</Typography>
+                <Typography variant="body1">{drug?.how_supplied}</Typography>
               </Box>
             )}
             {drug?.storage_and_handling && (

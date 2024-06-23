@@ -79,7 +79,7 @@ const DrugList: React.FC = () => {
         {data && !isFetching && (
           <Container>
             <List>
-              {data?.results.map((drug: Drug) => (
+              {data?.results?.map((drug: Drug) => (
                 <ListItem key={drug.id} component="a" href={`/drug/${drug.id}`}>
                   <ListItemText primary={drug.openfda.brand_name.join(", ")} />
                 </ListItem>
